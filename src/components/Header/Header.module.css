@@ -1,0 +1,35 @@
+.header{
+    grid-area: header;
+    background-color: #282c34;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header img {
+    max-width: 40px;
+  }
+  .login{
+    color: #FFF;
+  }
+  .prof{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .button{
+    color: #FFF;
+    background: gray;
+    width: 50px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+  }
+  .button:hover{
+    color: yellow;
+    background: #282c34;
+    border: #FFF 2px solid;
+  }

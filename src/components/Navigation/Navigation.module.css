@@ -1,0 +1,16 @@
+.nav{
+    grid-area: nav;
+    background-color: rgb(50, 53, 59);
+  }
+  .nav div {
+    margin: 0 0 20px 0;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .link {
+    color: #FFFFFF;
+    transition: color 0.3s;
+  }
+  .active{
+    color:#ffecb2;
+  }

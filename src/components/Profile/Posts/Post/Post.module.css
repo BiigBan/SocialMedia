@@ -1,0 +1,26 @@
+.item{
+    display: flex;
+    margin: 0 0 10px 0;
+}
+.icon{
+    width: 70px;
+    margin: 0 20px 0 0;
+}
+.icon img {
+    width: 100%;
+    border-radius: 50%;
+}
+.post{
+    font-size: 15px;
+}
+.post__name {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 5px 0;
+}
+.post__text{
+    margin: 0 0 5px 0;
+}
+.post__like {
+    color: rgb(161, 73, 73);
+}

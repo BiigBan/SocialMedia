@@ -1,0 +1,24 @@
+.post{
+    padding: 20px;
+}
+.mainPost {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+.inputPost {
+    font-size: 18px;
+    color: #FFF;
+    background: rgb(66, 66, 66);
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+.buttonPost {
+    width: 100px;
+    height: 20px;
+    color: #FFF;
+    background: rgb(60, 60, 60);
+}
+
+

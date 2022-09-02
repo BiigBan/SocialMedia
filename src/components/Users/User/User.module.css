@@ -1,0 +1,33 @@
+.user{
+    width: 100%;
+    min-height: 100px;
+}
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.pageNum{
+    font-size: 22px;
+    margin: 0 5px 0 0;
+    color: rgb(123, 123, 123);
+    cursor: pointer;
+
+}
+.pageNum:last-child{
+    margin: 0;
+}
+.selected{
+    font-size: 22px;
+    margin: 0 5px 0 0;
+    font-weight: bold;
+    color: rgb(69, 69, 69);
+}
+.arrow {
+    color: rgb(69, 69, 69);
+    font-size: 22px;
+    cursor: pointer;
+}
+.numbers{
+    margin: 0 auto;
+}

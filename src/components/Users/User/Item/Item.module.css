@@ -1,0 +1,65 @@
+.item{
+    width: 100%;
+    min-height: 100px;
+    border: 2px solid #000;
+    margin: 0 0 10px 0;
+    display: flex;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+.followButton{
+    background: rgb(78, 78, 78);
+    color: #FFF;
+    font-size: 18px;
+    height: 40px;
+    width: 90px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.navLink{
+    color: #000;
+    cursor: pointer;
+}
+.followButton:hover{
+    color: rgb(220, 226, 44);
+}
+.image{
+    padding: 10px;
+}
+.image img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.secondBlock{
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 10px 10px 10px ;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+.name{
+    font-size: 18px;
+}
+.status{
+}
+.location{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+.city{
+    margin: 0 0 5px 0;
+}

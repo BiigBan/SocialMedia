@@ -1,0 +1,25 @@
+.pageNum{
+    font-size: 22px;
+    margin: 0 5px 0 0;
+    color: rgb(123, 123, 123);
+    cursor: pointer;
+
+}
+.pageNum:last-child{
+    margin: 0;
+}
+.selected{
+    font-size: 22px;
+    margin: 0 5px 0 0;
+    font-weight: bold;
+    color: rgb(69, 69, 69);
+}
+.arrow {
+    color: rgb(69, 69, 69);
+    font-size: 22px;
+    cursor: pointer;
+}
+.numbers{
+    display: flex;
+    justify-content: center;
+}

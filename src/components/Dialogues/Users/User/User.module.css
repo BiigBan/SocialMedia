@@ -1,0 +1,9 @@
+.user{
+    height: 70px;
+    background: rgb(206, 206, 206);
+    display: flex;
+    margin: 0 10px 10px 0;
+}
+.user:last-child{
+    margin: 0 10px 0 0;
+}

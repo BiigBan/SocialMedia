@@ -1,0 +1,31 @@
+.app-wrapper{
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+
+  grid-template-areas: 
+  "header header"
+  "nav main-content"
+  ;
+}
+
+.main{
+  grid-area: main-content;
+  background-color: #dfdfdf;
+}
+
+/* .wrapper{
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+  background: rgb(160, 160, 160);
+  flex: 1 1 auto;
+} */
+/* #root{
+  height: 100vh;
+} */
+
