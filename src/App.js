@@ -52,6 +52,7 @@ const App = (props) => {
     </Suspense>
   )
 }
+// "homepage": "https://BiigBan.github.io/SocialMedia"
 
 
 const mapStateToProps = (state) => {

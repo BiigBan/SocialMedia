@@ -1,6 +1,7 @@
 .nav{
     grid-area: nav;
     background-color: rgb(50, 53, 59);
+    min-height: 100vh;
   }
   .nav div {
     margin: 0 0 20px 0;

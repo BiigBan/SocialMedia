@@ -141,4 +141,23 @@ export const getStatusThunk = (id) => {
     }
 }
 
+export const updateProfile = (info, photo, setStatus) => {
+    return dispatch => {
+        profileStatusAPI.updateProfile(info).then(
+            response => {
+                let result = response.data.resultCode;
+                if(result === 1){
+                    console.log(response.data.messages);
+                    setStatus(response.data.messages)
+                    
+                }
+            }
+        )
+        profileStatusAPI.updatePhoto(photo).then (
+            response => {
+            }
+        )
+    }
+}
+
 export default profileReduce;

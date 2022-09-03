@@ -1,0 +1,83 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 300px;
+}
+.text{
+    font-size: 18px;
+    
+}
+.input {
+    background: rgb(156, 156, 156);
+    height: 30px;
+    width: 100%;
+    margin: 0 0 10px 0;
+    color: #FFF;
+}
+.input::placeholder{
+    padding: 10px;
+    color: #FFF;
+}
+
+.inputRemember {
+    display: inline-block;
+    margin: 0 0 10px 0;
+}
+
+.remember {
+    margin: 0 10px 0 0;
+}
+.check:checked {
+    background: #000;
+}
+.submit {
+    width: 100px;
+    height: 40px;
+    background: rgb(52, 52, 52);
+    color: rgb(255, 255, 255);
+    margin: 10px 0 0 0;
+}
+.submit:hover{
+    color: rgb(216, 216, 6);
+}
+.error{
+    color: red;
+}
+.label{
+    cursor: pointer;
+}
+.check{
+    margin: 0 0 10px 0;
+}
+.jobBoolean{
+    margin: 0 0 0 10px;
+}
+.header{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    background: rgb(82, 82, 82);
+    color: #FFF;
+}
+.content{
+    overflow: hidden;
+    transition: 0.3s;
+}
+.arrow{
+    transform: rotate(90deg);
+}
+input[type='file']{
+    display: none
+}
+.buttonFile{
+    font-size: 18px;
+    background: rgb(66, 66, 66);
+    color: #FFF;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.buttonFile:hover{
+    color: rgb(198, 198, 0);
+}
