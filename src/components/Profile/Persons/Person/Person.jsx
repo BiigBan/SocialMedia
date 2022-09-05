@@ -2,8 +2,7 @@ import React from 'react';
 import cl from './Person.module.css';
 
 const Person = (props) => {
-
-    let image = (!props.profile.photos || props.profile.photos.small == false) ? props.profile.photos.small : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMO4MHTpDqZpz63MDWC05Oy3KOOXTmh9Z70w&usqp=CAU";
+    let image = (props.profile.photos && !props.profile.photos.small == false) ? props.profile.photos.small : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMO4MHTpDqZpz63MDWC05Oy3KOOXTmh9Z70w&usqp=CAU";
 
     let fullName = props.profile.fullName ? props.profile.fullName : 'User';
     let aboutMe = props.profile.aboutMe ? props.profile.aboutMe : 'Sorry';

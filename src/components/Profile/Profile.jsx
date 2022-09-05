@@ -10,7 +10,7 @@ const Profile = (props) => {
         <main className={cl.main}>
             <Background/>
             <Persons profile={props.profile}/>
-            <UserPost status={props.status} setStatusThunk={props.setStatusThunk}/>
+            <UserPost currentUserId={props.currentUserId} status={props.status} setStatusThunk={props.setStatusThunk}/>
             <TextPostContainer/>
             <PostsContainer/>
         </main>

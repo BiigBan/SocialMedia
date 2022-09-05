@@ -1,4 +1,5 @@
-import getAuthUserThunk from './auth-reduce';
+import getAuthUserThunk, { setAuthUser } from './auth-reduce';
+import { setProfileUser } from './profile-reduce';
 
 const INIZIALIZATED = 'INIZIALIZATED';
 
@@ -28,7 +29,11 @@ export const setInizializateApp = () => {
 
 export const setInizializateThunk = () => {
     return dispatch => {
-        return getAuthUserThunk().then(dispatch(setInizializateApp));
+        // return getAuthUserThunk().then(dispatch(setInizializateApp));
+        //1 При обновении страницы - не успевает прийти promise profileUser =>идет заспрос "/profile/null"
+        return Promise.all([getAuthUserThunk, setAuthUser, setProfileUser]).then(dispatch(setInizializateApp));
+        // setProfileUser
+        
     }
 }
 

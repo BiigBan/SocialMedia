@@ -115,7 +115,11 @@ export const getProfileUserThunk = (id = 25271) => {
     return async (dispatch) => {
         if (id === 0) {
         } else {
-
+            if (id === null) {
+                id = 25271;
+                let data = await userAPI.getProfileUser(id)
+                dispatch(setProfileUser(data));
+            }
             let data = await userAPI.getProfileUser(id)
             dispatch(setProfileUser(data));
 
@@ -146,14 +150,14 @@ export const updateProfile = (info, photo, setStatus) => {
         profileStatusAPI.updateProfile(info).then(
             response => {
                 let result = response.data.resultCode;
-                if(result === 1){
+                if (result === 1) {
                     console.log(response.data.messages);
                     setStatus(response.data.messages)
-                    
+
                 }
             }
         )
-        profileStatusAPI.updatePhoto(photo).then (
+        profileStatusAPI.updatePhoto(photo).then(
             response => {
             }
         )

@@ -65,21 +65,25 @@ const UserPost = (props) => {
         setStatus(props.status);
     }, [props.status])
 
-        return (
-            <div className={cl.post}>
-                {!editMode &&
-                    <div className={cl.mainPost}>
-                        <span> {status ? status : 'Status'}</span>
-                    </div>
-                }
-                {editMode &&
-                    <div >
-                        <input onChange={statusValue} className={cl.inputPost} type="text" value={status} />
-                    </div>
-                }
-                <button className={cl.buttonPost} onClick={changeEditMode}>Change post</button>
-            </div>
-        )
+    // if()
+    return (
+        <div className={cl.post}>
+            {!editMode &&
+                <div className={cl.mainPost}>
+                    <span> {status ? status : 'Status'}</span>
+                </div>
+            }
+            {editMode &&
+                <div >
+                    <input onChange={statusValue} className={cl.inputPost} type="text" value={status} />
+                </div>
+            }
+            {
+                Object.keys(props.currentUserId).length > 0 ?
+                <></> : <button className={cl.buttonPost} onClick={changeEditMode}>Change post</button>
+            }
+        </div>
+    )
 }
 
 export default UserPost;

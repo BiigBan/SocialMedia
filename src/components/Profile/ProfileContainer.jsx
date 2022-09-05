@@ -5,26 +5,34 @@ import { compose } from 'redux';
 import { withAuthContainer } from '../../@hoc/withAuthContainer';
 import { setProfileUser, getProfileUserThunk, setStatusThunk, getStatusThunk } from '../../redux/profile-reduce';
 import Profile from './Profile';
+import Loader from './../@Loader/Loader.jsx'
 
 
 const ProfileContainer = (props) => {
     let currentUserId = useParams();
+
+            //1 При обновении страницы - не успевает прийти promise profileUser =>идет заспрос "/profile/null"
+
     useEffect(() => {
-        props.getProfileUserThunk(currentUserId.userId)
-        props.getStatusThunk(currentUserId.userId)
-    }, [])
+        if (Object.keys(currentUserId).length != 0) {
+            props.getProfileUserThunk(currentUserId.userId)
+            props.getStatusThunk(currentUserId.userId)
+        } else {
+            props.getProfileUserThunk(props.profileId)
+            props.getStatusThunk(props.profileId)
+        }
+    }, [currentUserId.userId, props.currentUser])
     const currentProfile = props.profile.profile.profileUser ? props.profile.profile.profileUser : props.profile.profile.user;
 
-    //1
-    // let ProfileRender = withAuthContainer(Profile);
-    //1
+    console.log(props.profileId);
+    if(!props.profileId) {
+        return <Loader/>
+    }
     return (
-        <Profile profile={currentProfile} status={props.status} setStatusThunk={props.setStatusThunk}/>
+        <Profile currentUserId={currentUserId} profile={currentProfile} status={props.status} setStatusThunk={props.setStatusThunk} />
 
     )
 }
-
-// c
 
 const mapStateToProps = (state) => {
     return {
@@ -32,18 +40,11 @@ const mapStateToProps = (state) => {
         currentUser: state.profile.currentProfileUserId,
         status: state.profile.status,
         isAuthUser: state.auth.isAuthUser,
-        // auth: state.auth.isAuthUser,
-        // currentUserId: 2,
-        // chosedUser: state.users.chosedUser,
+        profileId: state.auth.id,
     }
 }
 
 export default compose(
-                connect(mapStateToProps, { setProfileUser, getProfileUserThunk, setStatusThunk, getStatusThunk }),
-                // withAuthContainer
-            )(ProfileContainer)
-
-// let ProfileRender = withAuthContainer(ProfileContainer);
-
-// export default connect(mapStateToProps, { setProfileUser, getProfileUserThunk })(ProfileContainer)
-
+    connect(mapStateToProps, { setProfileUser, getProfileUserThunk, setStatusThunk, getStatusThunk }),
+    // withAuthContainer
+)(ProfileContainer)
