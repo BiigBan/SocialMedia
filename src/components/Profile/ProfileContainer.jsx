@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams, Navigate } from 'react-router-dom';
 import { compose } from 'redux';
-import { withAuthContainer } from '../../@hoc/withAuthContainer';
 import { setProfileUser, getProfileUserThunk, setStatusThunk, getStatusThunk } from '../../redux/profile-reduce';
 import Profile from './Profile';
-import Loader from './../@Loader/Loader.jsx'
 
 
 const ProfileContainer = (props) => {
@@ -25,8 +23,8 @@ const ProfileContainer = (props) => {
     const currentProfile = props.profile.profile.profileUser ? props.profile.profile.profileUser : props.profile.profile.user;
 
     console.log(props.profileId);
-    if(!props.profileId) {
-        return <Loader/>
+    if(!props.profileId && !props.isAuthUser && !currentUserId.userId) {
+        return <Navigate to={'/Users'}/>
     }
     return (
         <Profile currentUserId={currentUserId} profile={currentProfile} status={props.status} setStatusThunk={props.setStatusThunk} />

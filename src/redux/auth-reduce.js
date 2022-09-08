@@ -2,6 +2,7 @@ import { authAPI, userAPI } from "../api/api";
 
 const SET_AUTH_USER = 'SET_AUTH_USER';
 const LOGOUT = 'LOGOUT';
+const CAPTCHA = 'CAPTCHA';
 
 
 
@@ -11,6 +12,7 @@ let initialState = {
     userId: null,
     login: null,
     isAuthUser: false,
+    captcha: undefined,
 };
 
 const authReduce = (state = initialState, action) => {
@@ -25,6 +27,11 @@ const authReduce = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.data,
+            }
+        case CAPTCHA:
+            return {
+                ...state,
+                captcha: action.captchaText,
             }
         default:
             return state;
@@ -51,6 +58,13 @@ export const logout = () => {
     }
 }
 
+export const captchaAC = (captchaText) => {
+    return {
+        type: CAPTCHA,
+        captchaText
+    }
+}
+
 export const getAuthUserThunk = () => {
     return async (dispatch) => {
         let data = await userAPI.getAuthUser()
@@ -60,15 +74,22 @@ export const getAuthUserThunk = () => {
     }
 }
 
-export const loginThunk = (email, password, rememberMe, setStatus) => {
+export const loginThunk = (email, password, rememberMe, captcha, setStatus) => {
     return async (dispatch) => {
-        let response = await authAPI.login(email, password, rememberMe)
+        let response = await authAPI.login(email, password, rememberMe, captcha)
         if (response.data.resultCode === 0) {
             userAPI.getAuthUser().then(
                 data => {
                     dispatch(setAuthUser(data))
                 }
             )
+        } else if (response.data.resultCode === 10) {
+            authAPI.security().then(
+                data => {
+                    dispatch(captchaAC(data))
+                }
+            )
+            setStatus(response.data.messages)
         } else {
             setStatus(response.data.messages)
         }
@@ -82,5 +103,15 @@ export const logoutThunk = () => {
         )
     }
 }
+
+// export const captcha = () => {
+//     return (dispatch) => {
+//         authAPI.security().then(
+//             data => {
+//                 dispatch(captchaAC(data))
+//             }
+//         )
+//     }
+// }
 
 export default authReduce;

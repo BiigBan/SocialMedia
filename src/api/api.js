@@ -103,8 +103,8 @@ export const profileStatusAPI = {
 }
 
 export const authAPI = {
-    login(email, password, rememberMe = false) {
-        return instance.post(`auth/login`, { email, password, rememberMe }).then(
+    login(email, password, rememberMe = false, captcha) {
+        return instance.post(`auth/login`, { email, password, rememberMe, captcha }).then(
             response => response
         )
     },
@@ -116,8 +116,14 @@ export const authAPI = {
                 }
             }
         )
+    },
+    security() {
+        return instance.get(`/security/get-captcha-url`).then(
+            response => response.data
+        )
     }
 }
+
 // const axioss = require("axios");
 
 // const options = {

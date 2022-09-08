@@ -17,10 +17,12 @@ const Settings = ({ isAuthUser, updateProfile }) => {
         setAccordion(!accordion);
     }
     useEffect(() => {
-        if (accordion) {
-            accordionContent.current.style.maxHeight = '500px'
-        } else {
-            accordionContent.current.style.maxHeight = '0px'
+        if (isAuthUser) {
+            if (accordion) {
+                accordionContent.current.style.maxHeight = '500px'
+            } else {
+                accordionContent.current.style.maxHeight = '0px'
+            }
         }
     }, [accordion])
 
@@ -40,7 +42,7 @@ const Settings = ({ isAuthUser, updateProfile }) => {
         const onHandleFile = (e) => {
             photo = e.target.files[0];
         }
-        
+
         return (
             <div className={cl.form}>
                 <Formik
@@ -83,11 +85,11 @@ const Settings = ({ isAuthUser, updateProfile }) => {
                 >
 
 
-                    
+
                     {({ status }) => (
                         <Form>
                             <label className={cl.buttonFile}>
-                                <Field onChange={onHandleFile}  name="photo" type="file" />
+                                <Field onChange={onHandleFile} name="photo" type="file" />
                                 Change photos
                             </label>
                             <br></br><br />
