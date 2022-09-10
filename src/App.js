@@ -14,6 +14,7 @@ import React, { useEffect, Suspense } from 'react';
 import { getAuthUserThunk } from './redux/auth-reduce';
 import { connect } from 'react-redux';
 import Loader from './components/@Loader/Loader';
+import NewsContainer from './components/News/NewsContainer';
 
 const Users = React.lazy(() => import('./components/Users/Users'));
 
@@ -39,7 +40,7 @@ const App = (props) => {
               <Route path='/Profile' element={<ProfileContainer />} />
               <Route path='Profile/:userId' element={<ProfileContainer />} />
               <Route path='/Dialogues/*' element={<DialoguesContainer />} />
-              <Route path='/News' element={<News />} />
+              <Route path='/News' element={<NewsContainer />} />
               <Route path='/Music' element={<Music />} />
               <Route path='/Settings' element={<Settings />} />
               <Route path='/users' element={<Users />} />

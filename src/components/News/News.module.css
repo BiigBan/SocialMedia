@@ -1,0 +1,35 @@
+.body{
+    display: flex;
+}
+.newsBody{
+    border: 2px solid #000;
+    margin: 0 0 10px 0;
+    display: flex;
+    font-size: 18px;
+}
+.newsInfo{
+    width: 180px;
+    margin: 0 30px 0 0;
+}
+.nameNewsUrl{
+    color: #000;
+}
+.nameNewsUrl:hover{
+    color: rgb(175, 175, 0);
+}
+.mainInfo{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    color: #000;
+    text-decoration: underline;
+    margin: 0 0 20px 0;
+}
+.title:hover{
+    color: rgb(175, 175, 0);
+}
+.date{
+    font-weight: 600;
+    color: rgb(158, 0, 0);
+}

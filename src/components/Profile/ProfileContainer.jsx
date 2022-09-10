@@ -22,7 +22,6 @@ const ProfileContainer = (props) => {
     }, [currentUserId.userId, props.currentUser])
     const currentProfile = props.profile.profile.profileUser ? props.profile.profile.profileUser : props.profile.profile.user;
 
-    console.log(props.profileId);
     if(!props.profileId && !props.isAuthUser && !currentUserId.userId) {
         return <Navigate to={'/Users'}/>
     }

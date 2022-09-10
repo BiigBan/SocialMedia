@@ -124,6 +124,22 @@ export const authAPI = {
     }
 }
 
+export const newsAPI = {
+    getNews(country = 'US') {
+        return axios.get(`https://google-news1.p.rapidapi.com/top-headlines?country=${country}&lang='en-US'&limit='50'&meta=true`, {
+            headers: {
+                'X-RapidAPI-Key': 'ff2cdbd7b5msh8ce4e43184ff15ap1b9f0djsne4e318b2e942',
+                'X-RapidAPI-Host': 'google-news1.p.rapidapi.com'
+            }
+        }).then(
+            response => {
+                console.log(response)
+                return response.data
+            }
+        )
+    }
+}
+
 // const axioss = require("axios");
 
 // const options = {
