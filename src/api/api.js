@@ -140,6 +140,29 @@ export const newsAPI = {
     }
 }
 
+export const musicAPI = {
+    getTracks() {
+        return axios.get('https://spotify23.p.rapidapi.com/albums/?ids=3IBcauSj5M2A6lTeffJzdv', {
+            headers: {
+                'X-RapidAPI-Key': 'ff2cdbd7b5msh8ce4e43184ff15ap1b9f0djsne4e318b2e942',
+                'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+            }
+        }).then(
+            response => {
+                return response.data.albums[0].tracks.items
+            }
+        )
+    },
+    findArtist(text) {
+        return axios.get(`https://spotify23.p.rapidapi.com/search/?q=${text}&type=multi&offset=0&limit=10&numberOfTopResults=5`, {
+            headers: {
+                'X-RapidAPI-Key': 'ff2cdbd7b5msh8ce4e43184ff15ap1b9f0djsne4e318b2e942',
+                'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+            }
+        }).then(response => response.data)
+    }
+}
+
 // const axioss = require("axios");
 
 // const options = {
