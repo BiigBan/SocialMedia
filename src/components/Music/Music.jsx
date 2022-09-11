@@ -26,10 +26,8 @@ const Music = ({ tracks, artist, getMusicFun, findUserFun }) => {
         })
         let user
         if (artist) {
-            console.log(artist);
             user =  <User tracks = {artist.tracks.items} artist={artist.artists.items[0]}/>
         }
-        // console.log(artist);
         return (
             <div>
                 <Search findUserFun={findUserFun} />

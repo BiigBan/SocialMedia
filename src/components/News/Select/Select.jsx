@@ -15,7 +15,7 @@ const Select = ({getNews}) => {
                     <Field className={cl.selectBox} as="select" name="country">
                         <option value="UA">Ukraine</option>
                         <option value="US">USA</option>
-                        <option value="UK">UK</option>
+                        <option value="FR">France</option>
                     </Field>
                     <button className={cl.button} type='submit'>Find</button>
                 </Form>

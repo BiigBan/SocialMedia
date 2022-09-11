@@ -62,12 +62,15 @@ const Login = (props) => {
                         }
                         return (
                             <Form className={cl.form}>
+                                Email and password for sign in <br/>
                                 <Field className={cl.input} name="email" type="email" />
+                                Email: thefank.03@gmail.com
                                 <div className={cl.error}>
                                     <ErrorMessage name="email" />
                                 </div>
                                 <br />
                                 <Field className={cl.input} name="password" type="password" />
+                                Password: qwerty123
                                 <div className={cl.error}>
                                     <ErrorMessage className={cl.error} name="password" />
                                 </div>
@@ -81,14 +84,7 @@ const Login = (props) => {
                                     </label>
                                 </div>
                                 <div className={cl.error}>
-                                    {/* {statusError === undefined ?
-                                        <Loader /> : compareStatus(status)
-                                        
-                                    } */}
                                     {status}
-                                    {/* {status === undefined ? props.captcha() : status} */}
-                                    {/* {(statusError === "Incorrect anti-bot symbols" && status === "Incorrect anti-bot symbols") ? status : props.captcha()} */}
-                                    {/* {(statusError === "Incorrect anti-bot symbols" && status === "Incorrect anti-bot symbols") || status === undefined ? props.captcha() : status} */}
                                     <br></br>
                                 </div>
                                 {props.captchaInfo ? <div>
