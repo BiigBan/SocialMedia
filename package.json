@@ -1,5 +1,6 @@
 {
   "name": "kamasutra-app",
+  "homepage": "http://BiigBan.github.io/SocialMedia-React",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
